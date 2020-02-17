@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+        POSTGRES_DB: "neoprospectasys"
+        POSTGRES_USER: "neoprospecta"
+        POSTGRES_PASSWORD: "mzrFr6DM8"
+        TZ: 'GMT'
+    volumes:
+      - ./database/:/var/lib/postgresql/data:rw
+    networks:
+        alehv_net:
+            ipv4_address: 10.12.0.3
+  web:
+    build: ./web
+    command: python3 manage.py runserver 0.0.0.0:8080
+    volumes:
+      - ./neoprospectaProject/:/neoprospectaProject:rw
+    ports:
+     - "8080:8080"
+    depends_on:
+      - db
+    networks:
+        alehv_net:
+            ipv4_address: 10.12.0.2
+  front:
+    build: ./front
+    command: bash -c "npm install && npm rebuild node-sass && ng serve --host 0.0.0.0 --port 4200"
+    volumes:
+      - './neoprospectaFront:/usr/src/app:rw'
+    ports:
+      - '4200:4200'
+    networks:
+        alehv_net:
+            ipv4_address: 10.12.0.4
+
+networks:
+    alehv_net:
+        ipam:
+            driver: default
+            config:
+              - subnet: 10.12.0.0/24
