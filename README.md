@@ -1,12 +1,13 @@
-#DESAFIO PARA DESENVOLVEDOR FULL STACK
-##DESCRIÇÃO:
+# DESAFIO PARA DESENVOLVEDOR FULL STACK
+
+## DESCRIÇÃO:
 Seguem as instruções do teste para a posição de Desenvolvedor Full Stack na
 Neoprospecta Microbiome Technologies.
 O deadline para entrega é dia 7 dias após recebimento deste e-mail a resposta da
 Neoprospecta deverá ser dada no máximo durante os próximos 10 dias.
 O objetivo do teste é analisar sua familiaridade com o Django, Django Rest Framework
 (DRF), Angular, SCSS, HTML e práticas de programação.
-##REQUISITOS:
+## REQUISITOS:
 Deve ser construída uma aplicação para listar e editar clientes utilizando ​ Angular 8+
 e outra em Django 2+.
 O Frontend em Angular deve interagir com o Backend por meio de uma API REST em
@@ -42,7 +43,7 @@ desabilitado;
 * RNF04 ​ - Adicionar testes unitários nos principais componentes de frontend;
 * RNF05 ​ - Adicionar testes nos endpoints;
 * RNF06 ​ - Utilizar docker.
-##OBSERVAÇÕES:
+## OBSERVAÇÕES:
 Pode utilizar as ferramentas que achar melhor. A utilização de angular-cli e
 django-admin são opções sua porém são fortemente recomendados pela facilidade no build
 embora seja possível atingir o mesmo efeito com outras ferramentas.
